@@ -9,10 +9,10 @@ script:
   - docker run rzangdocker/react-test npm test -- -- coverage
 
 after_success: 
-  - docker build --no-cache -t rzangdocker/multi-client ./client
-  - docker build --no-cache -t rzangdocker/multi-nginx ./nginx
-  - docker build --no-cache -t rzangdocker/multi-server ./server
-  - docker build --no-cache -t rzangdocker/multi-worker ./worker
+  - docker build -t rzangdocker/multi-client ./client
+  - docker build -t rzangdocker/multi-nginx ./nginx
+  - docker build -t rzangdocker/multi-server ./server
+  - docker build -t rzangdocker/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
