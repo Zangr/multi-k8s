@@ -1,6 +1,9 @@
 const keys = require('./keys');
 const redis = require('redis');
 
+console.log('======DEBUG REDIS FROM WORKER======');
+console.log('keys.redisHost', keys.redisHost);
+console.log('keys.redisPort', keys.redisPort);
 const redisClient = redis.createClient({
   host: keys.redisHost,
   port: keys.redisPort,
