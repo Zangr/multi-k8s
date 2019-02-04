@@ -1,6 +1,6 @@
-docker build -t rzangdocker/multi-client:latest -t rzangdocker/multi-client:$SHA -f ./client/Dockerfile ./client
-docker build -t rzangdocker/multi-server:latest -t rzangdocker/multi-server:$SHA -f ./server/Dockerfile ./server
-docker build -t rzangdocker/multi-worker:latest -t rzangdocker/multi-worker:$SHA -f ./worker/Dockerfile ./worker
+docker build --no-cache -t rzangdocker/multi-client:latest -t rzangdocker/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build --no-cache -t rzangdocker/multi-server:latest -t rzangdocker/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build --no-cache -t rzangdocker/multi-worker:latest -t rzangdocker/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push rzangdocker/multi-client:latest
 docker push rzangdocker/multi-server:latest
