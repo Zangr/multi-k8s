@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: rzangdocker/multi-server
+          image: stephengrider/multi-server
           ports:
             - containerPort: 5000
           env:
@@ -22,6 +22,8 @@ spec:
               value: redis-cluster-ip-service
             - name: REDIS_PORT
               value: '6379'
+            - name: PGUSER
+              value: postgres
             - name: PGHOST
               value: postgres-cluster-ip-service
             - name: PGPORT
@@ -29,8 +31,7 @@ spec:
             - name: PGDATABASE
               value: postgres
             - name: PGPASSWORD
-              valueFrom: 
-                secretKeyRef: 
+              valueFrom:
+                secretKeyRef:
                   name: pgpassword
                   key: PGPASSWORD
-            
